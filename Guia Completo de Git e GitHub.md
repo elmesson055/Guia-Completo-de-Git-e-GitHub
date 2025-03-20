@@ -479,6 +479,89 @@ git push origin main
 
 ---
 
+# 12. Comandos uteis
+
+ **Para visualizar diretórios remotos no GitHub**
+
+`Cod`: git remote -v 
+
+**Realiza criação de nova branch.**
+
+`Cod`: git checkout -b 'Nome da Branch'
+
+**Realiza a movimentação entre branch**
+
+`Cod`: git checkout 'Nome da Branch'
+
+**Para identificar em qual branch estou**
+
+`Cod`: git branch
+
+**Para Mesclar novas funcionalidades**
+
+`Cod`: git merge 'Nome da Branch'
+
+**Para renomear branch**
+
+`Cod`: git branch -m 'Nome da Branch' 'branchrenomeada'
+
+**Para deletar branch**
+
+`Cod`: git branch -d 'Nome da Branch' 
+
+**Comando stash caixa temporarias**
+
+`Cod`: git stash save 'Nome da Branch' 
+
+**Comando stash list**
+
+`Cod`: git stash list
+
+**Comando stash pop para tirar da caixa**
+
+`Cod`: git stash pop [1]
+
+**Comando stash clear para descartar da caixa**
+
+`Cod`: git stash clear
+
+**Para ver Logs**
+
+`Cod`: git log  
+`Cod`: git log 'nomedapasta'
+`Cod`: git log 'nomedoarquivo'
+`Cod`: git log --oneline
+`Cod`: git log --graph
+`Cod`: gitk
+
+**Como reveter commits** Cuidado
+
+`Cod`:  git revert 654das65
+
+**Retorna/restoura para STAGING/INDEX**
+
+`Cod`:  git reset --soft HEARD1~1
+
+**Retorna/restoura para WORKING DIR**
+
+`Cod`:  git reset --mixed HEAD^1
+
+**Remove objeto**
+
+`Cod`:  git reset --hard HEAD^1
+
+**Para reverter o commit**
+`Cod`:  git revert 654das65
+
+
+
+
+
+
+
+
+
+
 ## 👤 Autor
 
 **Élmesson de Jesus**
@@ -524,3 +607,5 @@ Este guia foi elaborado com base nas seguintes fontes:
    - https://jupyterlab.readthedocs.io/en/stable/user/git.html
    - https://github.com/jupyterlab/jupyterlab-git
 
+9. **Visualizer para praticar**
+   - https://git-school.github.io/visualizing-git/
