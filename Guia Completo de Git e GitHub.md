@@ -553,6 +553,39 @@ git push origin main
 **Para reverter o commit**
 `Cod`:  git revert 654das65
 
+**tag anotada inclui informações extras como autor, data e mensagem
+`Cod`: git tag -a v1.0.0 -m "Primeiro lançamento"
+
+**Ver todas as tags do repositório:
+
+`Cod`:  git tag
+
+ **Ver detalhes de uma tag anotada:
+
+ `Cod`: git show nome-da-tag
+
+  **Enviar as tags para o GitHub (após criá-las):
+
+  `Cod`: git push origin nome-da-tag
+
+**Ou, para enviar todas as tags de uma vez:
+`Cod`: git push origin --tags
+
+**Excluir uma tag localmente:
+ `Cod`: git tag -d v1.0.0
+
+ ** Excluir uma tag do GitHub (remota):
+  `Cod`: git push origin --delete v1.0.0
+
+** Criar uma tag em um commit específico:
+ `Cod`: git tag v1.0.0 123abc456def
+
+
+
+
+
+
+
 
 
 
