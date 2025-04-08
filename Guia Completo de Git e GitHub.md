@@ -64,7 +64,9 @@ git config --global core.editor "code --wait"
 ### 2.1 Iniciar Repositório 🏗️
 
 mkdir meu-projeto && cd meu-projeto
+
 git init
+
 echo "# Meu Projeto" >> README.md
 
 ### 2.2 Ciclo Básico de Trabalho 🔄
@@ -74,8 +76,12 @@ git status
 
 ### Adicionar arquivos: ➕
 git add arquivo.sql
-git add .          # Todos os arquivos
-git add *.sql      # Todos .sql
+
+git add .           
+  Incluir todos os arquivos
+
+git add *.sql        
+  Incluir todos .sql
 
 ### Commitar: 📦
 git commit -m "Descrição clara das alterações"
@@ -155,6 +161,7 @@ Edite manualmente para resolver diferenças ✏️
 Finalize com: ✅
 
 git add arquivo-resolvido.sql
+
 git commit -m "Resolve conflito de merge"
 
 ### 6. Segurança e Boas Práticas 🔒
@@ -334,9 +341,12 @@ nbdime compare old_notebook.ipynb new_notebook.ipynb
 
 ### Exemplo de fluxo para nova análise: 📊
 git checkout -b analise/comportamento-cliente
+
 ### Trabalhe nos notebooks e scripts 📓
 git add .
+
 git commit -m "Adiciona análise de segmentação de clientes"
+
 git push origin analise/comportamento-cliente
 
 #### Crie PR no GitHub e solicite revisão da equipe 👀👥
@@ -398,7 +408,9 @@ git checkout pull/42/head
 #### - Documente decisões importantes nos comentários
 #### - Após aprovação, faça o merge:
 git checkout main
+
 git merge --no-ff analise/comportamento-cliente
+
 git push origin main
 
 ### 11.4 Documentação Pós-Análise
@@ -414,7 +426,9 @@ git checkout -b docs/atualiza-analise-churn
 
 ### Edite arquivos de documentação
 git add docs/analises/churn.md
+
 git commit -m "Documenta metodologia e resultados da análise de churn"
+
 git push origin docs/atualiza-analise-churn
 
 ### Crie um novo PR para a documentação
@@ -477,12 +491,17 @@ git push origin docs/atualiza-analise-churn
 git branch --merged main
 
 ### Remover branches locais mescladas:
-git branch --merged main | grep -v "^\*" | xargs git branch -d
+git branch --merged main | grep -v "^\*" | xargs 
+
+git branch -d
 
 ### Atualizar dependências (exemplo com Python):
 pip freeze > requirements.txt
+
 git add requirements.txt
+
 git commit -m "Atualiza dependências do projeto"
+
 git push origin main
 
 ---
@@ -536,10 +555,15 @@ git push origin main
 **Para ver Logs**
 
 `Cod`: git log  
+
 `Cod`: git log 'nomedapasta'
+
 `Cod`: git log 'nomedoarquivo'
+
 `Cod`: git log --oneline
+
 `Cod`: git log --graph
+
 `Cod`: gitk
 
 **Como reveter commits** Cuidado
@@ -562,6 +586,7 @@ git push origin main
 `Cod`:  git revert 654das65
 
 **tag anotada inclui informações extras como autor, data e mensagem
+
 `Cod`: git tag -a v1.0.0 -m "Primeiro lançamento"
 
 **Ver todas as tags do repositório:
