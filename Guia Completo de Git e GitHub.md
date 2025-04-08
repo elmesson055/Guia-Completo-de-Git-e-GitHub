@@ -36,7 +36,7 @@ Este guia foi criado para ajudar iniciantes a dominar o Git e GitHub, com foco e
 
 ---
 
-## 1. Configuração Inicial ⚙️
+### 1. Configuração Inicial ⚙️
 
 > *Primeiros passos para configurar o Git em seu ambiente*
 
@@ -54,12 +54,13 @@ git --version
 ### 1.2 Configuração Básica 🔧
 
 git config --global user.name "Seu Nome"
+
 git config --global user.email "seu.email@provedor.com"
 
-# Configurar editor padrão (VSCode exemplo): 📝
+### Configurar editor padrão (VSCode exemplo): 📝
 git config --global core.editor "code --wait"
 
-## 2. Controle de Versão Local 💾
+### 2. Controle de Versão Local 💾
 ### 2.1 Iniciar Repositório 🏗️
 
 mkdir meu-projeto && cd meu-projeto
@@ -68,35 +69,35 @@ echo "# Meu Projeto" >> README.md
 
 ### 2.2 Ciclo Básico de Trabalho 🔄
 
-# Verificar status: 🔍
+### Verificar status: 🔍
 git status
 
-# Adicionar arquivos: ➕
+### Adicionar arquivos: ➕
 git add arquivo.sql
 git add .          # Todos os arquivos
 git add *.sql      # Todos .sql
 
-# Commitar: 📦
+### Commitar: 📦
 git commit -m "Descrição clara das alterações"
 
-# Ver histórico: 📜
+### Ver histórico: 📜
 git log --oneline --graph --decorate
 
-## 3. Integração com GitHub 🌐
+### 3. Integração com GitHub 🌐
 ### 3.1 Conectar Repositórios 🔗
-# Criar repositório no GitHub primeiro
+### Criar repositório no GitHub primeiro
 git remote add origin https://github.com/seu-user/meu-projeto.git
 git branch -M main
 git push -u origin main
 
 ### 3.2 Enviar Atualizações 📤
 
-# Fluxo padrão: 🔁
+### Fluxo padrão: 🔁
 git add .
 git commit -m "Melhoria na estrutura do banco"
 git push
 
-## 4. Trabalho Colaborativo 👥
+### 4. Trabalho Colaborativo 👥
 ### 4.1 Clonar Projeto 📋
 
 git clone https://github.com/usuario/repositorio.git
@@ -106,26 +107,26 @@ cd repositorio
 
 git pull origin main
 
-# Equivalente a: 🔄
+### Equivalente a: 🔄
 git fetch origin
 git merge origin/main
 
 ### 4.3 Branching Strategy 🌿
 
-# Nova feature: 🆕
+### Nova feature: 🆕
 git checkout -b feature/nova-funcao
 
-# Publicar branch: 📤
+### Publicar branch: 📤
 git push -u origin feature/nova-funcao
 
-# Merge após aprovação: 🔀
+### Merge após aprovação: 🔀
 git checkout main
 git merge feature/nova-funcao
 
-## 5. Gerenciamento Avançado 🔧
+### 5. Gerenciamento Avançado 🔧
 ### 5.1 .gitignore 🙈
 
-# Exemplo para projeto SQL:
+### Exemplo para projeto SQL:
 *.bak
 *.log
 .env
@@ -156,7 +157,7 @@ Finalize com: ✅
 git add arquivo-resolvido.sql
 git commit -m "Resolve conflito de merge"
 
-## 6. Segurança e Boas Práticas 🔒
+### 6. Segurança e Boas Práticas 🔒
 ✅ Faça: 👍
 
 📦 Commits pequenos e frequentes
@@ -177,301 +178,308 @@ git commit -m "Resolve conflito de merge"
 
 ⚠️ Push forçado (-f)
 
-## 7. Comandos Úteis 🛠️
+### 7. Comandos Úteis 🛠️
 
-# Ver diferenças não commitadas 👁️
+### Ver diferenças não commitadas 👁️
 git diff
 
-# Listar branches remotas 🌿
+### Listar branches remotas 🌿
 git branch -a
 
-# Salvar trabalho temporário 💼
+### Salvar trabalho temporário 💼
 git stash
 git stash pop
 
-# Ver configurações ⚙️
+### Ver configurações ⚙️
 git config --list
 
-## 8. Recursos de Aprendizado 📚
+### 8. Recursos de Aprendizado 📚
 Documentação Oficial do Git 📖
 
 https://git-scm.com/doc
 
-## 9. Pull Requests e Code Reviews 🔍
+### 9. Pull Requests e Code Reviews 🔍
 ### 9.1 Criar Pull Request 📤
 
-# No GitHub: 🌐
-# 1. Navegue até o repositório 🏠
-# 2. Clique em "Pull requests" > "New pull request" ➕
-# 3. Selecione a branch de origem e destino 🔀
-# 4. Clique em "Create pull request" ✅
-# 5. Adicione título e descrição detalhada 📝
+### No GitHub: 🌐
+#### 1. Navegue até o repositório 🏠
+#### 2. Clique em "Pull requests" > "New pull request" ➕
+#### 3. Selecione a branch de origem e destino 🔀
+#### 4. Clique em "Create pull request" ✅
+#### 5. Adicione título e descrição detalhada 📝
 
 ### 9.2 Revisar Pull Request 👀
 
-# Boas práticas para code review: 🔎
-# - Verifique a funcionalidade ✅
-# - Avalie a qualidade do código 📊
-# - Teste em seu ambiente local: 🧪
+### Boas práticas para code review: 🔎
+#### - Verifique a funcionalidade ✅
+#### - Avalie a qualidade do código 📊
+#### - Teste em seu ambiente local: 🧪
 git fetch origin
 git checkout pull/ID/head
 
 ### 9.3 Merge de Pull Request 🔀
 
-# Via GitHub UI ou terminal: 💻
+### Via GitHub UI ou terminal: 💻
 git checkout main
 git merge --no-ff feature/nova-funcao
 git push origin main
 
-## 10. GitHub Actions e CI/CD 🚀
+### 10. GitHub Actions e CI/CD 🚀
 ### 10.1 Configuração Básica ⚙️
 
-# Crie arquivo .github/workflows/ci.yml: 📄
-# name: CI
-# 
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-# 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Run tests
-#       run: |
-#         echo "Executando testes..."
-#         # comandos de teste
+### Crie arquivo .github/workflows/ci.yml: 📄
+#### name: CI
+#### 
+#### on:
+####   push:
+####     branches: [ main ]
+####   pull_request:
+####     branches: [ main ]
+#### 
+#### jobs:
+####   build:
+####     runs-on: ubuntu-latest
+####     steps:
+####     - uses: actions/checkout@v2
+####     - name: Run tests
+####       run: |
+####         echo "Executando testes..."
+####         # comandos de teste
 
 ### 10.2 Automações Úteis 🤖
 
-# - Testes automatizados 🧪
-# - Linting e verificação de código 🔍
-# - Deploy automático 🚀
-# - Notificações de build 🔔
+#### - Testes automatizados 🧪
+#### - Linting e verificação de código 🔍
+#### - Deploy automático 🚀
+#### - Notificações de build 🔔
 
-## 11. Git para Projetos Markdown 📝
+### 11. Git para Projetos Markdown 📝
 ### 11.1 Visualização de Diferenças 👁️
-
-# Comparar versões de documentos: 📄
+### Comparar versões de documentos: 📄
 git diff HEAD~1 documento.md
 
 ### 11.2 Colaboração em Documentação para Times de Analistas de Dados 📊👥
 
-# Estrutura de repositório recomendada: 📂
-# /analises           # Notebooks e scripts de análise 📊
-# /dados              # Metadados e amostras (não dados sensíveis) 📈
-# /docs               # Documentação do projeto 📚
-# /relatorios         # Relatórios e visualizações 📋
-# /queries            # Consultas SQL e scripts de ETL 💾
-# /modelos            # Modelos estatísticos ou de ML 🧠
+#### Estrutura de repositório recomendada: 📂
+#### /analises           # Notebooks e scripts de análise 📊
+#### /dados              # Metadados e amostras (não dados sensíveis) 📈
+#### /docs               # Documentação do projeto 📚
+#### /relatorios         # Relatórios e visualizações 📋
+#### /queries            # Consultas SQL e scripts de ETL 💾
+#### /modelos            # Modelos estatísticos ou de ML 🧠
 
-# Fluxo de trabalho para times de dados: 👥
-# 1. Crie um repositório centralizado: 🏢
+#### Fluxo de trabalho para times de dados: 👥
+### 1. Crie um repositório centralizado: 🏢
 git init projeto-analytics
 cd projeto-analytics
 git remote add origin https://github.com/sua-empresa/projeto-analytics.git
 
-# 2. Configure branches de proteção: 🔒
-# No GitHub: Settings > Branches > Add rule
-# - Proteja a branch 'main' 🛡️
-# - Exija revisões de pull request 👀
-# - Exija testes de CI passarem ✅
+### 2. Configure branches de proteção: 🔒
+#### No GitHub: Settings > Branches > Add rule
+#### - Proteja a branch 'main' 🛡️
+#### - Exija revisões de pull request 👀
+#### - Exija testes de CI passarem ✅
 
-# 3. Convide membros da equipe: 👥
-# No GitHub: Settings > Collaborators > Add people
-# Atribua funções: Admin, Write, Read 🔑
+### 3. Convide membros da equipe: 👥
+#### No GitHub: Settings > Collaborators > Add people
+#### Atribua funções: Admin, Write, Read 🔑
 
-# 4. Estabeleça convenções de documentação: 📏
-# - README.md na raiz com visão geral do projeto 🏠
-# - CONTRIBUTING.md com guias de contribuição 🤝
-# - Documentação técnica em /docs 📚
-# - Comentários em código seguindo padrões (docstrings) 💬
+### 4. Estabeleça convenções de documentação: 📏
+#### - README.md na raiz com visão geral do projeto 🏠
+#### - CONTRIBUTING.md com guias de contribuição 🤝
+#### - Documentação técnica em /docs 📚
+#### - Comentários em código seguindo padrões (docstrings) 💬
 
-# 5. Compartilhe análises via Jupyter Notebooks: 📓
-# - Use nbconvert para exportar para Markdown 🔄
+### 5. Compartilhe análises via Jupyter Notebooks: 📓
+#### - Use nbconvert para exportar para Markdown 🔄
 jupyter nbconvert --to markdown analise.ipynb
+
 git add analise.md
+
 git commit -m "Adiciona análise exploratória de dados de vendas"
 
-# 6. Colaboração em tempo real: ⏱️
-# - Use GitHub Codespaces para ambiente compartilhado 💻
-# - Ou JupyterHub para notebooks colaborativos 📊
-# - Vincule ao GitHub via extensões 🔌
+### 6. Colaboração em tempo real: ⏱️
+#### - Use GitHub Codespaces para ambiente compartilhado 💻
+#### - Ou JupyterHub para notebooks colaborativos 📊
+#### - Vincule ao GitHub via extensões 🔌
 
-# 7. Revisão de código e análises: 🔍
-# - Crie pull requests para revisão de pares 👥
-# - Use comentários inline para feedback específico 💬
-# - Utilize ferramentas como nbdime para diff de notebooks: 📊
+### 7. Revisão de código e análises: 🔍
+#### - Crie pull requests para revisão de pares 👥
+#### - Use comentários inline para feedback específico 💬
+#### - Utilize ferramentas como nbdime para diff de notebooks: 📊
 nbdime compare old_notebook.ipynb new_notebook.ipynb
 
-# 8. Integração com ferramentas de BI: 📊
-# - Vincule documentos ao Power BI/Tableau via URLs 🔗
-# - Documente fontes de dados e transformações 📝
-# - Mantenha dicionário de dados atualizado 📖
+### 8. Integração com ferramentas de BI: 📊
+#### - Vincule documentos ao Power BI/Tableau via URLs 🔗
+#### - Documente fontes de dados e transformações 📝
+#### - Mantenha dicionário de dados atualizado 📖
 
-# 9. Automação de documentação: 🤖
-# - Configure GitHub Actions para gerar docs: ⚙️
-# .github/workflows/docs.yml para executar Sphinx/MkDocs
-# - Publique automaticamente no GitHub Pages 🌐
+### 9. Automação de documentação: 🤖
+#### - Configure GitHub Actions para gerar docs: ⚙️
+#### .github/workflows/docs.yml para executar Sphinx/MkDocs
+#### - Publique automaticamente no GitHub Pages 🌐
 
-# 10. Gestão de conhecimento: 🧠
-# - Use GitHub Wiki para documentação colaborativa 📚
-# - Mantenha um registro de decisões (ADRs) 📝
-# - Crie templates para issues e PRs específicos para análises 📋
+### 10. Gestão de conhecimento: 🧠
+#### - Use GitHub Wiki para documentação colaborativa 📚
+#### - Mantenha um registro de decisões (ADRs) 📝
+#### - Crie templates para issues e PRs específicos para análises 📋
 
-# Sugestões para trabalho em equipe: 👥
-# - Use uma branch por análise ou feature 🌿
-# - Mantenha parágrafos em linhas separadas para facilitar merge 📄
-# - Utilize issues para discutir metodologias e abordagens 💬
-# - Padronize nomenclatura de arquivos e variáveis 📏
-# - Documente pressupostos e limitações das análises 📝
-# - Implemente revisões técnicas antes de publicar resultados 🔍
+#### - Sugestões para trabalho em equipe: 👥
+#### - Use uma branch por análise ou feature 🌿
+#### - Mantenha parágrafos em linhas separadas para facilitar merge 📄
+#### - Utilize issues para discutir metodologias e abordagens 💬
+#### - Padronize nomenclatura de arquivos e variáveis 📏
+#### - Documente pressupostos e limitações das análises 📝
+#### - Implemente revisões técnicas antes de publicar resultados 🔍
 
-# Exemplo de fluxo para nova análise: 📊
+### Exemplo de fluxo para nova análise: 📊
 git checkout -b analise/comportamento-cliente
-# Trabalhe nos notebooks e scripts 📓
+### Trabalhe nos notebooks e scripts 📓
 git add .
 git commit -m "Adiciona análise de segmentação de clientes"
 git push origin analise/comportamento-cliente
-# Crie PR no GitHub e solicite revisão da equipe 👀👥
+
+#### Crie PR no GitHub e solicite revisão da equipe 👀👥
 
 ### 11.3 Boas Práticas para Pull Requests em Projetos de Análise de Dados 📊🔎
 
-# Estrutura recomendada para descrição do PR: 📝
-# - Contexto da análise 🔍
-# - Metodologia utilizada 🧪
-# - Principais descobertas 💡
-# - Impacto nos KPIs de negócio 📈
-# - Próximos passos sugeridos 🔮
+#### Estrutura recomendada para descrição do PR: 📝
+#### - Contexto da análise 🔍
+#### - Metodologia utilizada 🧪
+#### - Principais descobertas 💡
+#### - Impacto nos KPIs de negócio 📈
+#### - Próximos passos sugeridos 🔮
 
-# Exemplo de descrição de PR: 📋
-# ```
-# ## Análise de Churn de Clientes 📉
+#### Exemplo de descrição de PR: 📋
+#### ```
+### Análise de Churn de Clientes 📉
+#### 
+#### **Contexto:** Investigação dos fatores que levam ao cancelamento de assinaturas 🔍
 # 
-# **Contexto:** Investigação dos fatores que levam ao cancelamento de assinaturas 🔍
+### **Metodologia:** 🧪
+
+
+#### - Análise exploratória em Python/R 📊
+#### - Modelagem com Random Forest 🌲
+#### - Validação cruzada com 5-fold ✅
 # 
-# **Metodologia:** 🧪
-# - Análise exploratória em Python/R 📊
-# - Modelagem com Random Forest 🌲
-# - Validação cruzada com 5-fold ✅
+### **Descobertas:** 💡
+#### - Clientes com mais de 6 meses têm 30% menos chance de churn 📉
+#### - Problemas de suporte aumentam churn em 2.5x ⚠️
+#### - Identificados 3 segmentos de alto risco 🎯
 # 
-# **Descobertas:** 💡
-# - Clientes com mais de 6 meses têm 30% menos chance de churn 📉
-# - Problemas de suporte aumentam churn em 2.5x ⚠️
-# - Identificados 3 segmentos de alto risco 🎯
+### **Impacto:** 💼
+#### - Potencial redução de 15% no churn mensal 📈
+#### - ROI estimado de 3.2x para ações de retenção 💰
 # 
-# **Impacto:** 💼
-# - Potencial redução de 15% no churn mensal 📈
-# - ROI estimado de 3.2x para ações de retenção 💰
-# 
-# **Próximos passos:** 🔮
-# - Implementar score de propensão ao churn 📊
-# - Testar campanhas de retenção para segmento de alto risco 🎯
+### **Próximos passos:** 🔮
+#### - Implementar score de propensão ao churn 📊
+#### - Testar campanhas de retenção para segmento de alto risco 🎯
 # ```
 
-# Processo de revisão técnica: 🔍
-# 1. Revisor verifica a metodologia: 🧪
+### Processo de revisão técnica: 🔍
+### 1. Revisor verifica a metodologia: 🧪
 git checkout pull/42/head
-# Examine notebooks e scripts 📓
+### Examine notebooks e scripts 📓
 
-# 2. Validação de resultados: ✅
-# - Reproduzir análises críticas 🔄
-# - Verificar cálculos de métricas
-# - Testar com subconjuntos de dados
+### 2. Validação de resultados: ✅
+#### - Reproduzir análises críticas 🔄
+#### - Verificar cálculos de métricas
+#### - Testar com subconjuntos de dados
 
-# 3. Feedback construtivo:
-# - Use comentários específicos no GitHub
-# - Sugira melhorias na visualização
-# - Questione pressupostos quando necessário
-# - Proponha análises complementares
+### 3. Feedback construtivo:
+#### - Use comentários específicos no GitHub
+#### - Sugira melhorias na visualização
+#### - Questione pressupostos quando necessário
+#### - Proponha análises complementares
 
-# 4. Aprovação e merge:
-# - Exija pelo menos 2 aprovações para análises críticas
-# - Documente decisões importantes nos comentários
-# - Após aprovação, faça o merge:
+### 4. Aprovação e merge:
+#### - Exija pelo menos 2 aprovações para análises críticas
+#### - Documente decisões importantes nos comentários
+#### - Após aprovação, faça o merge:
 git checkout main
 git merge --no-ff analise/comportamento-cliente
 git push origin main
 
-# 11.4 Documentação Pós-Análise
+### 11.4 Documentação Pós-Análise
 
-# Após o merge, atualize a documentação:
-# 1. Adicione a análise ao índice de conhecimento
-# 2. Atualize o README com novas descobertas
-# 3. Crie ou atualize dashboards relacionados
-# 4. Vincule a análise a issues resolvidas
+### Após o merge, atualize a documentação:
+#### 1. Adicione a análise ao índice de conhecimento
+#### 2. Atualize o README com novas descobertas
+#### 3. Crie ou atualize dashboards relacionados
+#### 4. Vincule a análise a issues resolvidas
 
-# Exemplo de atualização de documentação:
+### Exemplo de atualização de documentação:
 git checkout -b docs/atualiza-analise-churn
-# Edite arquivos de documentação
+
+### Edite arquivos de documentação
 git add docs/analises/churn.md
 git commit -m "Documenta metodologia e resultados da análise de churn"
 git push origin docs/atualiza-analise-churn
-# Crie um novo PR para a documentação
 
-# 11.5 Compartilhamento de Resultados
+### Crie um novo PR para a documentação
 
-# Opções para compartilhar com stakeholders:
-# - GitHub Pages para relatórios públicos
-# - Wiki interna para documentação técnica
-# - Integração com ferramentas de BI
-# - Apresentações geradas a partir de notebooks
+### 11.5 Compartilhamento de Resultados
 
-# Exemplo de publicação via GitHub Pages:
-# Configure em Settings > Pages
-# Selecione branch e pasta (/docs)
-# URL: https://sua-empresa.github.io/projeto-analytics/
+#### Opções para compartilhar com stakeholders:
+#### - GitHub Pages para relatórios públicos
+#### - Wiki interna para documentação técnica
+#### - Integração com ferramentas de BI
+#### - Apresentações geradas a partir de notebooks
 
-# Automação de publicação:
-# Crie .github/workflows/pages.yml:
-# ```yaml
-# name: Deploy Pages
-# on:
-#   push:
-#     branches: [ main ]
-#     paths: [ 'docs/**' ]
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Setup Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.x'
-#       - name: Install dependencies
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install jupyter nbconvert mkdocs
-#       - name: Convert notebooks
-#         run: |
-#           jupyter nbconvert --to markdown docs/notebooks/*.ipynb
-#       - name: Deploy
-#         uses: JamesIves/github-pages-deploy-action@4.1.4
-#         with:
-#           branch: gh-pages
-#           folder: docs
-# ```
+### Exemplo de publicação via GitHub Pages:
+#### Configure em Settings > Pages
+#### Selecione branch e pasta (/docs)
+#### URL: https://sua-empresa.github.io/projeto-analytics/
 
-# 11.6 Manutenção Contínua do Repositório
+### Automação de publicação:
+### Crie .github/workflows/pages.yml:
 
-# Práticas recomendadas:
-# - Revisão trimestral de análises antigas
-# - Arquivamento de análises obsoletas
-# - Atualização de dependências
-# - Limpeza de branches mescladas
+#### ```yaml
+#### name: Deploy Pages
+#### on:
+####   push:
+####     branches: [ main ]
+####     paths: [ 'docs/**' ]
+#### jobs:
+####   build-and-deploy:
+####     runs-on: ubuntu-latest
+####     steps:
+####       - uses: actions/checkout@v2
+####       - name: Setup Python
+####         uses: actions/setup-python@v2
+####         with:
+####           python-version: '3.x'
+####       - name: Install dependencies
+####         run: |
+####           python -m pip install --upgrade pip
+####           pip install jupyter nbconvert mkdocs
+####       - name: Convert notebooks
+####         run: |
+####           jupyter nbconvert --to markdown docs/notebooks/*.ipynb
+####       - name: Deploy
+####         uses: JamesIves/github-pages-deploy-action@4.1.4
+####         with:
+####           branch: gh-pages
+####           folder: docs
+#### ```
 
-# Comandos para manutenção:
-# Listar branches mescladas:
+### 11.6 Manutenção Contínua do Repositório
+
+#### Práticas recomendadas:
+#### - Revisão trimestral de análises antigas
+#### - Arquivamento de análises obsoletas
+#### - Atualização de dependências
+#### - Limpeza de branches mescladas
+
+### Comandos para manutenção:
+### Listar branches mescladas:
 git branch --merged main
 
-# Remover branches locais mescladas:
+### Remover branches locais mescladas:
 git branch --merged main | grep -v "^\*" | xargs git branch -d
 
-# Atualizar dependências (exemplo com Python):
+### Atualizar dependências (exemplo com Python):
 pip freeze > requirements.txt
 git add requirements.txt
 git commit -m "Atualiza dependências do projeto"
@@ -479,7 +487,7 @@ git push origin main
 
 ---
 
-# 12. Comandos uteis
+### 12. Comandos uteis
 
  **Para visualizar diretórios remotos no GitHub**
 
@@ -579,15 +587,6 @@ git push origin main
 
 ** Criar uma tag em um commit específico:
  `Cod`: git tag v1.0.0 123abc456def
-
-
-
-
-
-
-
-
-
 
 
 
